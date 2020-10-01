@@ -50,6 +50,7 @@ class TransactionsClient(PostgresClient, BaseTransactionsClient):
         try:
             query = self.lookup_id(model.id, table=table)
             update_data = table.get_database_model(model)
+            ## TODO: Investigate effects of popping geometry
             # SQLAlchemy orm updates don't seem to like geoalchemy types
             update_data.pop("geometry", None)
             query.update(update_data)
