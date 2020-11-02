@@ -1,4 +1,4 @@
-# arturo-stac-api ![arturo-stac-api](https://github.com/arturo-ai/arturo-stac-api/workflows/arturo-stac-api/badge.svg)
+# stac-api
 ---
 
 **Documentation**: coming soon...
@@ -6,13 +6,6 @@
 **Source Code**: [https://github.com/arturo-ai/arturo-stac-api](https://github.com/arturo-ai/arturo-stac-api)
 
 ---
-
-Python library for building and customizing a STAC compliant API:
-
-
-```
-pip install arturo-stac-api
-```
 
 
 ## Usage
@@ -102,4 +95,18 @@ Run local:
 
 ``` bash
 docker run --rm -it -p 8080:8080 gcr.io/ln-sherlock/stac-api:latest
+```
+
+## Development
+Install dependencies:
+
+``` bash
+pipenv install
+pipenv shell
+```
+
+Run in development mode:
+
+``` bash
+uvicorn stac_api.app:app --port 8080 --reload
 ```

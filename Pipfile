@@ -23,6 +23,7 @@ boto3 = "==1.14.27"
 httpx = "==0.13.3"
 python-dotenv = "==0.14.0"
 arturo-stac-api = {editable = "true", path = "."}
+elasticsearch = {extras = ["async"], version = "*"}
 
 [dev-packages]
 pytest = "*"
@@ -33,3 +34,6 @@ pre-commit = "*"
 
 [requires]
 python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true
