@@ -1,26 +1,8 @@
-# stac-api
----
+# Sherlock Stac Api (from arturo-stac-api ![arturo-stac-api](https://github.com/arturo-ai/arturo-stac-api/workflows/arturo-stac-api/badge.svg))
+FastAPI/postgres implementation of the [STAC API specification](https://github.com/radiantearth/stac-api-spec).
+>>>>>>> master
 
-**Documentation**: coming soon...
-
-**Source Code**: [https://github.com/arturo-ai/arturo-stac-api](https://github.com/arturo-ai/arturo-stac-api)
-
----
-
-
-## Usage
-```python
-# my_app.py
-from stac_api.config import ApiSettings
-from stac_api.api import create_app
-
-settings = ApiSettings()
-app = create_app(settings)
-```
-
-```bash
-$ uvicorn my_app:app --reload
-```
+Extended from the arturo-stac-api project to include congito based authorization and elastic integration.
 
 ## Project Structure
 ```
@@ -31,15 +13,7 @@ $ uvicorn my_app:app --reload
 │   ├── clients         # Database CRUD
 │   ├── models          # Database and API data models
 │   ├── resources       # API endpoints
-│   └── utils           # FastAPI dependencies
-├── scripts             # Scripts for local development
-├── stac_api
-│   ├── api             # API layer
-│   ├── clients
-│   │   ├── postgres    # Postgres CRUD client
-│   │   └── tiles       # OGC Tiles API client
-│   ├── models          # Pydantic and ORM models
-│   └── utils           # Helper functions
+│   └── utils           # FastAPI/Cognito dependencies
 └── tests
     ├── api             # Test api creation
     ├── clients         # Test application logic
