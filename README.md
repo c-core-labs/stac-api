@@ -1,5 +1,7 @@
-# arturo-stac-api ![arturo-stac-api](https://github.com/arturo-ai/arturo-stac-api/workflows/arturo-stac-api/badge.svg)
+# Sherlock Stac Api (from arturo-stac-api ![arturo-stac-api](https://github.com/arturo-ai/arturo-stac-api/workflows/arturo-stac-api/badge.svg))
 FastAPI/postgres implementation of the [STAC API specification](https://github.com/radiantearth/stac-api-spec).
+
+Extended from the arturo-stac-api project to include congito based authorization and elastic integration.
 
 ## Project Structure
 ```
@@ -10,7 +12,7 @@ FastAPI/postgres implementation of the [STAC API specification](https://github.c
 │   ├── clients         # Database CRUD
 │   ├── models          # Database and API data models
 │   ├── resources       # API endpoints
-│   └── utils           # FastAPI dependencies
+│   └── utils           # FastAPI/Cognito dependencies
 └── tests
     ├── clients         # CRUD test cases
     ├── data            # Test data
