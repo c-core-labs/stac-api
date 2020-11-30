@@ -64,15 +64,3 @@ jobs:
           POSTGRES_DBNAME: postgis
           POSTGRES_HOST: localhost
           POSTGRES_PORT: 5432
-
-      - name: Run test suite
-        run: |
-          pipenv run pytest -svvv
-        env:
-          ENVIRONMENT: testing
-          POSTGRES_USER: username
-          POSTGRES_PASS: password
-          POSTGRES_DBNAME: postgis
-          POSTGRES_HOST_READER: localhost
-          POSTGRES_HOST_WRITER: localhost
-          POSTGRES_PORT: 5432

@@ -1,5 +1,6 @@
 # Sherlock Stac Api (from arturo-stac-api ![arturo-stac-api](https://github.com/arturo-ai/arturo-stac-api/workflows/arturo-stac-api/badge.svg))
 FastAPI/postgres implementation of the [STAC API specification](https://github.com/radiantearth/stac-api-spec).
+>>>>>>> master
 
 Extended from the arturo-stac-api project to include congito based authorization and elastic integration.
 
@@ -14,9 +15,9 @@ Extended from the arturo-stac-api project to include congito based authorization
 │   ├── resources       # API endpoints
 │   └── utils           # FastAPI/Cognito dependencies
 └── tests
-    ├── clients         # CRUD test cases
-    ├── data            # Test data
-    └── resources       # API test cases
+    ├── api             # Test api creation
+    ├── clients         # Test application logic
+    └── resources       # Test api endpoints
 ```
 
 ## Local Development
@@ -68,4 +69,18 @@ Run local:
 
 ``` bash
 docker run --rm -it -p 8080:8080 gcr.io/ln-sherlock/stac-api:latest
+```
+
+## Development
+Install dependencies:
+
+``` bash
+pipenv install
+pipenv shell
+```
+
+Run in development mode:
+
+``` bash
+uvicorn stac_api.app:app --port 8080 --reload
 ```

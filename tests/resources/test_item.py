@@ -679,7 +679,7 @@ def test_field_extension_exclude_default_includes(app_client, load_test_data):
 
     resp = app_client.post("/search", json=body)
     resp_json = resp.json()
-    assert "geometry" in resp_json["features"][0]
+    assert "geometry" not in resp_json["features"][0]
 
 
 def test_search_intersects_and_bbox(app_client):
@@ -696,3 +696,9 @@ def test_get_missing_item(app_client, load_test_data):
     test_coll = load_test_data("test_collection.json")
     resp = app_client.get(f"/collections/{test_coll['id']}/items/invalid-item")
     assert resp.status_code == 404
+
+
+def test_search_invalid_query_field(app_client):
+    body = {"query": {"gsd": {"lt": 100}, "invalid-field": {"eq": 50}}}
+    resp = app_client.post("/search", json=body)
+    assert resp.status_code == 422
